@@ -7,11 +7,20 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true,
+      allowRunningInsecureContent: false
+    }
+  })
+  process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
-
+  require('./menu/mainmenu')
+  
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 

@@ -1,0 +1,10 @@
+.btn {
+    padding-top : 1rem;
+    padding-bottom : 1rem;
+    width : 100%;
+    border-bottom : 1px solid black;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
