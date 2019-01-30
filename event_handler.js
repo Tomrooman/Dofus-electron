@@ -9,7 +9,6 @@ $('.btn-home')[0].onclick = function(event) {
 function show_informations() {
     console.log('show informations')
     $('.principal-container')[0].innerHTML = ''
-
     render_home_button()
 }
 
