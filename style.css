@@ -5,6 +5,15 @@
     border-bottom : 1px solid black;
 }
 
+.btn-home {
+    border-top : 1px solid black;
+}
+
+.btn-home:hover {
+    background-color : grey;
+    transition: background-color 0.3s ease-in-out;
+}
+
 .btn:focus {
     box-shadow: none;
 }
