@@ -1,3 +1,9 @@
+const fs = require('fs');
+
+ROOT_APP_PATH = fs.realpathSync('.');
+let input
+let last_infos_value
+
 function show_informations() {
     $('.principal-container')[0].innerHTML = ''
     $('.principal-container')[0].className = "principal-container"
@@ -21,18 +27,21 @@ function show_informations() {
 
 function modify_infos() {
     if (this.children[1].type === undefined) {
-        infos_choice = this.children[1].innerHTML
-        input = create_input("infos-input", infos_choice)
+        last_infos_value = this.children[1].innerHTML
+        input = create_input("infos-input", this.children[1].innerHTML)
         input.style.borderRadius = '10px'
         this.removeChild(this.children[1])
         this.appendChild(input)
         $('.infos-input').focus()
     }
     else {
-        let p = create_p(false, infos_choice)
+        let p = create_p(false, input.value)
         this.removeChild(this.children[1])
         this.appendChild(p)
-        console.log('modify choice : ', input.value)
+        json.infos[this.children[0].innerHTML] = input.value
+        if (last_infos_value != input.value) {
+            fs.writeFileSync('./assets/dofus-electron.json', JSON.stringify(json));
+        }
     }
 }
 

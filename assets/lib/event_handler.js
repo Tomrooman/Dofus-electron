@@ -1,6 +1,4 @@
 let json = require('./assets/dofus-electron.json')
-let infos_choice = []
-let input
 
 $('.btn-infos')[0].onclick = function (event) {
     show_informations()
