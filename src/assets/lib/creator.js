@@ -57,13 +57,16 @@ function create_button(className, innerText, onclick = false) {
     return button;
 }
 
-function create_input(className, value) {
+function create_input(className, value, placeholder) {
     let input = document.createElement('input')
     if (!!className) {
         input.className = className
     }
     if (!!value) {
         input.value = value
+    }
+    if (!!placeholder) {
+        input.placeholder = placeholder
     }
     return input
 }

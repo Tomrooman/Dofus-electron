@@ -89,7 +89,7 @@ function add_infos() {
     let divName = create_div('col-10 row center-div')
     let divValue = create_div('col-10 row center-div')
     let title = create_h('h4', "text-center", 'Rajouter une information')
-    let confirmBtn = create_button('btn btn-home', "Ajouter", confirm_add_infos)
+    let confirmBtn = create_button('btn', "Ajouter", confirm_add_infos)
     let inputName = create_input("col-8", false)
     let inputValue = create_input("col-8", false)
     let infosDiv = create_div('add-infos-form col-12')
