@@ -1,5 +1,6 @@
 body {
     background-color: rgb(34, 34, 34);
+    font-family: 'Carter One', cursive;
 }
 
 input {
@@ -9,7 +10,7 @@ input {
 }
 
 .principal-container {
-    overflow-y : auto
+    overflow-y : auto;
 }
 
 input:focus {
@@ -20,21 +21,20 @@ input:focus {
     padding-top : 1rem;
     padding-bottom : 1rem;
     width : 100%;
-    border-bottom : 1px solid rgb(102, 46, 44);
+    border-bottom : 1px solid rgb(133, 90, 84);
     color : rgb(180, 78, 75);
+    font-size : 1.2rem;
 }
 
 .btn:hover {
     background-color : rgb(102, 46, 44);
-    transition: background-color 0.5s ease-in-out;
-    transition: color 0.3s ease-in-out;
-    transition: font-size 0.3s ease-in-out;
-    color : rgb(194, 159, 154);
-    font-size : 1.2rem;
+    transition: all 0.2s ease-in-out;
+    letter-spacing: 0.3rem;
+    color : rgb(206, 194, 193);
 }
 
 .btn-add-infos {
-    border-top : 1px solid rgb(102, 46, 44);
+    border-top : 1px solid rgb(133, 90, 84);
 }
 
 .home-menu {
@@ -47,7 +47,7 @@ input:focus {
 }
 
 .btn-home {
-    border-top : 1px solid rgb(102, 46, 44);
+    border-top : 1px solid rgb(133, 90, 84);
 }
 
 .bottom-choice {
@@ -61,19 +61,21 @@ input:focus {
 }
 
 .add-infos-div {
-    border : 1px solid rgb(131, 48, 45);
+    border : 1px solid rgba(92, 92, 92, 0.733);
+    box-shadow: 0px 0px 15px rgba(92, 92, 92, 0.733);
     margin-top : 2rem;
     margin-bottom : 3rem;
     padding-bottom : 2rem;
     border-radius : 10px;
-    width: 100%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
-    color : rgb(194, 159, 154);
+    color : rgb(187, 174, 172);
+    background-color : rgba(49, 49, 49, 0.733);
 }
 
 .label-add-infos {
-    color : rgb(180, 78, 75);
+    color : rgb(187, 174, 172);
 }
 
 .center-div {
@@ -84,34 +86,47 @@ input:focus {
 
 .add-infos-div h4 {
     padding-top : 0.5rem;
+    margin-top : 2rem;
     padding-bottom : 0.7rem;
-    background-color : rgb(131, 48, 45);
-    margin-bottom : 3rem;
+    margin-bottom : 2rem;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
 .one_infos {
-    border : 1px solid rgb(131, 48, 45);
+    border : 1px solid rgba(92, 92, 92, 0.733);
     margin-top : 0.5rem;
     margin-bottom : 1.5rem;
     border-radius : 10px;
-    width: 80%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
     color : rgb(180, 78, 75);
+    background-color : rgba(49, 49, 49, 0.733);
+    box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
+}
+
+.infos-title {
+    margin-top : 2rem;
+    margin-bottom : 2rem;
+    color : rgb(206, 194, 193);
+    letter-spacing: 0.3rem;
+}
+
+.one_infos:hover {
+    transition : all 0.2s ease-in-out;
+    box-shadow: 0px 0px 30px rgb(148, 92, 90);
 }
 
 .one_infos h4 {
-    background-color : rgb(131, 48, 45);
-    padding-bottom : 0.5rem;
-    padding-top : 0.2rem;
+    padding-bottom : 0.2rem;
+    padding-top : 0.5rem;
     border-top-left-radius : 10px;
     border-top-right-radius : 10px;
-    color : rgb(194, 159, 154);
+    color : rgb(206, 194, 193);
 }
 
 .one_infos p {
-    padding-top : 0.7rem;
+    padding-top : 0.5rem;
     padding-bottom : 0.3rem;
 }
