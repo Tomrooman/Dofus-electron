@@ -18,7 +18,7 @@ function createWindow () {
   process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('src/index.html')
   require('./menu/mainmenu')
   
   // Open the DevTools.

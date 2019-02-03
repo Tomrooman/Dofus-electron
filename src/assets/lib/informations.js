@@ -1,8 +1,7 @@
 const fs = require('fs');
 
-ROOT_APP_PATH = fs.realpathSync('.');
-let input
-let last_infos_value
+let input = ''
+let last_infos_value = ''
 
 function show_informations() {
     $('.principal-container')[0].innerHTML = ''
@@ -40,7 +39,7 @@ function modify_infos() {
         this.appendChild(p)
         json.infos[this.children[0].innerHTML] = input.value
         if (last_infos_value != input.value) {
-            fs.writeFileSync('./assets/dofus-electron.json', JSON.stringify(json));
+            fs.writeFileSync(__dirname + '/assets/dofus-electron.json', JSON.stringify(json));
         }
     }
 }

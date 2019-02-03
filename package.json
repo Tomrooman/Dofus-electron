@@ -1,9 +1,54 @@
 {
   "name": "dofus-electron",
+  "productName": "dofus-electron",
   "version": "1.0.0",
-  "description": "Interface pour m'aider sur dofus",
-  "main": "main.js",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint src --color"
+  },
+  "keywords": [],
+  "author": "Tom",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {
+        "packageManager": "yarn"
+      },
+      "electronWinstallerConfig": {
+        "name": "dofus_electron"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "dofuselectron"
+      }
+    }
+  },
   "dependencies": {
+    "electron-compile": "^6.4.4",
+    "electron-squirrel-startup": "^1.0.0",
     "ajv": "^6.7.0",
     "ansi-regex": "^2.1.1",
     "array-find-index": "^1.0.2",
@@ -138,18 +183,16 @@
     "xtend": "^2.1.2",
     "yauzl": "^2.4.1"
   },
-  "devDependencies": {},
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Tomrooman/Dofus-electron.git"
-  },
-  "author": "Tom Rooman",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Tomrooman/Dofus-electron/issues"
-  },
-  "homepage": "https://github.com/Tomrooman/Dofus-electron#readme"
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "electron-forge": "^5.2.4",
+    "electron-prebuilt-compile": "4.0.0",
+    "eslint": "^3",
+    "eslint-config-airbnb": "^15",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-jsx-a11y": "^5",
+    "eslint-plugin-react": "^7"
+  }
 }
