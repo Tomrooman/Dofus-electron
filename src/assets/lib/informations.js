@@ -22,6 +22,7 @@ function show_informations() {
     let addInfosBtn = create_button('btn btn-add-infos', "Ajouter une information", add_infos)
     bottomChoice.appendChild(addInfosBtn)
     render_home_button(bottomChoice)
+    $('.principal-container')[0].style.maxHeight = ($(window).height() - $('.bottom-choice').height()) + "px"
 }
 
 function modify_infos() {
@@ -45,5 +46,37 @@ function modify_infos() {
 }
 
 function add_infos() {
-    console.log('add infos')
+    $('.principal-container')[0].innerHTML = ''
+    let div = create_div('add-infos-div')
+    let divName = create_div('col-10 row center-div')
+    let divValue = create_div('col-10 row center-div')
+    let title = create_h('h4', "text-center", 'Rajouter une informations')
+    let confirmBtn = create_button('btn btn-home', "Ajouter", confirm_add_infos)
+    let inputName = create_input("col-8", false)
+    let inputValue = create_input("col-8", false)
+    let infosDiv = create_div('add-infos-form col-12')
+    let labelName = create_p('col-3 label-add-infos', "Nom")
+    let labelValue = create_p('col-3 label-add-infos', "Valeur")
+    let returnInfos = create_button('btn', "Retourner aux informations", show_informations)
+    divName.appendChild(labelName)
+    divName.appendChild(inputName)
+    divValue.appendChild(labelValue)
+    divValue.appendChild(inputValue)
+    infosDiv.appendChild(divName)
+    infosDiv.appendChild(divValue)
+    div.appendChild(title)
+    div.appendChild(infosDiv)
+    let bottomChoice = create_div('bottom-choice')
+    $('.principal-container')[0].appendChild(div)
+    bottomChoice.appendChild(confirmBtn)
+    bottomChoice.appendChild(returnInfos)
+    render_home_button(bottomChoice)
+}
+
+function confirm_add_infos() {
+    if ($('input')[0].value != '' && $('input')[1].value != '') {
+        json.infos[$('input')[0].value] = $('input')[1].value
+        fs.writeFileSync(__dirname + '/assets/dofus-electron.json', JSON.stringify(json));
+    }
+    show_informations()
 }
