@@ -107,7 +107,7 @@ input:focus {
 .infos-title {
     padding-top : 1rem;
     padding-bottom : 1rem;
-    margin-bottom : 0.5rem;
+    margin-bottom : 2rem;
     color : rgb(206, 194, 193);
     letter-spacing: 0.3rem;
 }
