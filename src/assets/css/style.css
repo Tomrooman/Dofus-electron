@@ -26,7 +26,7 @@ body {
 
 input {
     background-color: rgb(34, 34, 34);
-    color : rgb(180, 78, 75);
+    color : rgb(167, 63, 60);
     border-color : rgb(102, 46, 44);
 }
 
@@ -44,7 +44,7 @@ input:focus {
     width : 100%;
     border-bottom : 1px solid rgb(133, 90, 84);
     background-color : rgba(22, 22, 22, 0.281);
-    color : rgb(180, 78, 75);
+    color : rgb(167, 63, 60);
     font-size : 1.2rem;
 }
 
@@ -53,10 +53,10 @@ input:focus {
 }
 
 .btn:hover {
-    background-color : rgb(102, 46, 44);
     transition: all 0.2s ease-in-out;
     letter-spacing: 0.3rem;
     color : rgb(206, 194, 193);
+    background: linear-gradient(to right, rgb(102, 46, 44));
 }
 
 .home-menu {
