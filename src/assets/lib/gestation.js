@@ -2,7 +2,7 @@ function show_gestation() {
     $('.principal-container')[0].innerHTML = ''
     $('.principal-container')[0].className = "principal-container"
     let titleH = create_h('h2', 'craft-title text-center', "Gestation")
-    let ressourceDiv = create_div('text-center principal-ressource-div')
+    let ressourceDiv = create_div('text-center principal-gestation-div')
     $('.principal-container')[0].appendChild(titleH)
     let gestationContainer = create_div('gestation-container')
     let divLine
