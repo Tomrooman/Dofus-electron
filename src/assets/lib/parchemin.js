@@ -8,7 +8,7 @@ function show_parchemin() {
     let parchoContainer = create_div("parcho-container")
     input.oninput = dragodindeKeyPress
     ressourceDiv.appendChild(input)
-    dragodindes.map((dragodinde, index) => {
+    dragodindes.map(dragodinde => {
         let divLine = create_div('ressource-line row')
         let pName = create_p("parchemin-name", dragodinde[2])
         divLine.appendChild(pName)

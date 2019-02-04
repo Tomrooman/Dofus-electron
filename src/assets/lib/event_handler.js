@@ -24,6 +24,10 @@ $('.btn-lastdd')[0].onclick = function (event) {
     lastDragodindes()
 }
 
+$(".btn-fecondation-calculator")[0].onclick = function (event) {
+    calculFecondation()
+}
+
 $(document).ready(() => {
     let top = ($(window).height() / 2) - ($('.home-menu').height() / 2)
     $('.home-menu')[0].style.top = top + "px"
@@ -34,8 +38,9 @@ function show_home() {
     let craftBtn = create_button('btn btn-craft', "Crafts", () => { show_craft() })
     let parcheminBtn = create_button('btn btn-parchemin', "Parchemins", () => { show_parchemin() })
     let gestationBtn = create_button('btn btn-gestation', "Gestation des dragodindes", () => { show_gestation() })
-    let myddBtn = create_button('btn btn-gestation', "Mes dragodindes", () => { myDragodindes() })
-    let lastBtn = create_button('btn btn-gestation', "Dernière dragodinde fécondée", () => { lastDragodindes() })
+    let myddBtn = create_button('btn mydd', "Mes dragodindes", () => { myDragodindes() })
+    let lastBtn = create_button('btn lastdd', "Dernière dragodinde fécondée", () => { lastDragodindes() })
+    let calculBtn = create_button('btn btn-fecondation-calculator', "Calculer les fécondations", () => { calculFecondation() })
     $('.principal-container')[0].innerHTML = ""
     $('.principal-container')[0].className = "principal-container home-menu"
     $('.principal-container')[0].appendChild(infosBtn)
@@ -44,6 +49,7 @@ function show_home() {
     $('.principal-container')[0].appendChild(gestationBtn)
     $('.principal-container')[0].appendChild(myddBtn)
     $('.principal-container')[0].appendChild(lastBtn)
+    $('.principal-container')[0].appendChild(calculBtn)
 }
 
 function render_home_button(bottomChoice) {

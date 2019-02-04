@@ -123,7 +123,7 @@ input:focus {
 }
 
 .one_infos h4 {
-    padding-bottom : 0.2rem;
+    padding-bottom : 0.5rem;
     padding-top : 0.5rem;
     border-top-left-radius : 10px;
     border-top-right-radius : 10px;
@@ -195,16 +195,44 @@ input:focus {
 
 }
 
-.ressource-line {
+.ressource-line, .last-line {
     margin-left : auto;
     margin-right : auto;
     color : rgb(206, 194, 193);
     padding-top : 1rem;
 }
 
+.last-line:hover {
+    cursor: pointer;
+    background-color: rgb(102, 46, 44) !important;
+}
+
 .ressource-line:hover {
     transition: all 0.2s ease-in-out;
     color : rgb(180, 78, 75);
+}
+
+.addDD-line, .rmvDD-line {
+    margin-left : auto;
+    margin-right : auto;
+    color : rgb(206, 194, 193);
+    padding-top : 1rem;
+}
+
+.addDD-line:hover {
+    background-color: rgba(66, 219, 91, 0.13) !important;
+    box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
+    transition: all 0.2s ease-in-out;
+    color : rgba(20, 155, 47, 0.781);
+    cursor: pointer;
+}
+
+.rmvDD-line:hover {
+    background-color : rgba(102, 43, 40, 0.801) !important;
+    box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
+    transition: all 0.2s ease-in-out;
+    color : rgb(206, 194, 193);
+    cursor: pointer;
 }
 
 .gestation-line {
@@ -278,6 +306,12 @@ input:focus {
     text-align : left;
 }
 
+.mydd-name {
+    width : 100%;
+    text-align : left;
+    padding-left : 4rem;
+}
+
 .parchemin-count {
     width : 50%;
     text-align : right;
@@ -294,4 +328,10 @@ input:focus {
 .ressource-count {
     padding-right : 1rem;
     width : 20%;
+}
+
+.no-dd-title {
+    color : rgb(180, 78, 75);
+    padding-top : 1rem;
+    font-size : 1.5rem;
 }
