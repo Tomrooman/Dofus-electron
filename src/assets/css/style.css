@@ -22,9 +22,13 @@ input:focus {
     padding-bottom : 1rem;
     width : 100%;
     border-bottom : 1px solid rgb(133, 90, 84);
-    background-color : rgba(49, 49, 49, 0.733);
+    background-color : rgba(22, 22, 22, 0.281);
     color : rgb(180, 78, 75);
     font-size : 1.2rem;
+}
+
+.btn-infos {
+    border-top : 1px solid rgb(133, 90, 84);
 }
 
 .btn:hover {
@@ -35,7 +39,8 @@ input:focus {
 }
 
 .home-menu {
-    margin-top : 12rem;
+    position: absolute;
+    width : 100%;
 }
 
 .infos-input {
@@ -157,18 +162,6 @@ input:focus {
     margin-bottom : 2rem;
 }
 
-.parcho-div p {
-    border-bottom : 1px solid rgba(92, 92, 92, 0.733);
-    padding-bottom : 1rem;
-    padding-top : 1rem;
-    margin-bottom : 0.2rem;
-    width : 100%;
-}
-
-.parcho-div p:last-child {
-    border-bottom-style : hidden;
-}
-
 .principal-parcho-div {
     width : 80%;
     margin-left : auto;
@@ -184,6 +177,7 @@ input:focus {
     margin-right : auto;
     border-radius : 10px;
     box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
+    cursor : pointer;
 }
 
 .craft-title, .infos-title {
@@ -207,6 +201,23 @@ input:focus {
     padding-top : 1rem;
 }
 
+.ressource-line:hover {
+    transition: all 0.2s ease-in-out;
+    color : rgb(180, 78, 75);
+}
+
+.gestation-line {
+    margin-left : auto;
+    margin-right : auto;
+    color : rgb(206, 194, 193);
+    padding-top : 1rem;
+}
+
+.gestation-line:hover {
+    transition: all 0.2s ease-in-out;
+    color : rgb(180, 78, 75);
+}
+
 .principal-ressource-div {
     border : 1px solid rgba(92, 92, 92, 0.733);
     border-radius : 10px;
@@ -217,13 +228,29 @@ input:focus {
     margin-bottom : 2rem;
 }
 
-.principal-ressource-div div:nth-child(2n+2) {
-    background-color : rgba(46, 46, 46, 0.788);
+.input-parcho {
+    margin-bottom :1rem;
+    margin-top: 1rem;
+    width : 50%;
 }
 
-.principal-ressource-div div:last-child {
+.principal-ressource-div div:last-child, .parcho-container div:last-child {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+.principal-parcho-div {
+    border : 1px solid rgba(92, 92, 92, 0.733);
+    border-radius : 10px;
+    width : 90%;
+    margin-left : auto;
+    margin-right : auto;
+    box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
+    margin-bottom : 2rem;
+}
+
+.principal-ressource-div div:nth-child(2n+2), .parcho-container div:nth-child(2n+2) {
+    background-color : rgba(46, 46, 46, 0.788);
 }
 
 .ressource-count {
@@ -233,6 +260,24 @@ input:focus {
 .ressource-name {
     width : 80%;
     padding-left : 1rem;
+}
+
+.parchemin-name {
+    width: 50%;
+    text-align : left;
+}
+
+.parchemin-count {
+    width : 50%;
+    text-align : right;
+}
+
+.parchemin-name {
+    padding-left : 4rem;
+}
+
+.parchemin-count {
+    padding-right : 4rem;
 }
 
 .ressource-count {

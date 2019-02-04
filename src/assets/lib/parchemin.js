@@ -1,63 +1,38 @@
 function show_parchemin() {
     $('.principal-container')[0].innerHTML = ''
     $('.principal-container')[0].className = "principal-container"
-    let principalParchoDiv = create_div('principal-parcho-div row')
-    let parchoDiv = create_div('text-center col-6 parcho-div')
-    let dragodindesDiv = create_div('text-center col-6 parcho-div')
-    let parchoTitle = create_h('h3', "parcho-title text-center", "Parchemins")
-    let dragodindesTitle = create_h('h3', "parcho-title text-center", "Dragodindes")
-    parchoDiv.appendChild(parchoTitle)
-    dragodindesDiv.appendChild(dragodindesTitle)
-    let inputParcho = create_input("col-10", false, "Chercher")
-    let inputDragodinde = create_input("col-10", false, "Chercher")
-    inputParcho.oninput = parchoKeyPress
-    inputDragodinde.oninput = dragodindeKeyPress
-    parchoDiv.appendChild(inputParcho)
-    dragodindesDiv.appendChild(inputDragodinde)
-    let listDivParcho = create_div('list-div-parcho')
-    let listDivDragodinde = create_div('list-div-dragodinde')
-
-    dragodindes.map(dragodinde => {
-        let parcho = create_p("text-center", dragodinde[2])
-        listDivParcho.appendChild(parcho)
-
-        let drago = create_p("text-center", dragodinde[0])
-        listDivDragodinde.appendChild(drago)
+    let titleH = create_h('h2', 'craft-title text-center', "Parchemins")
+    let ressourceDiv = create_div('text-center principal-parcho-div')
+    $('.principal-container')[0].appendChild(titleH)
+    let input = create_input('input-parcho', '', "Rechercher")
+    let parchoContainer = create_div("parcho-container")
+    input.oninput = dragodindeKeyPress
+    ressourceDiv.appendChild(input)
+    dragodindes.map((dragodinde, index) => {
+        let divLine = create_div('ressource-line row')
+        let pName = create_p("parchemin-name", dragodinde[2])
+        divLine.appendChild(pName)
+        let pLine = create_p("parchemin-count", dragodinde[0])
+        divLine.appendChild(pLine)
+        parchoContainer.appendChild(divLine)
     })
-    parchoDiv.appendChild(listDivParcho)
-    dragodindesDiv.appendChild(listDivDragodinde)
-    principalParchoDiv.appendChild(parchoDiv)
-    principalParchoDiv.appendChild(dragodindesDiv)
-    $('.principal-container')[0].appendChild(principalParchoDiv)
+    ressourceDiv.appendChild(parchoContainer)
+    $('.principal-container')[0].appendChild(ressourceDiv)
     let bottomChoice = create_div('bottom-choice')
     render_home_button(bottomChoice)
     $('.principal-container')[0].style.maxHeight = ($(window).height() - $('.bottom-choice').height()) + "px"
 }
 
 function dragodindeKeyPress(e) {
-    $(".list-div-dragodinde")[0].innerHTML = ''
-    $(".list-div-parcho")[0].innerHTML = ''
+    $(".parcho-container")[0].innerHTML = ''
     dragodindes.map(dragodinde => {
-        if (dragodinde[0][0].indexOf(e.target.value) != -1 || e.target.value == "") {
-            let parcho = create_p("text-center", dragodinde[2])
-            $(".list-div-parcho")[0].appendChild(parcho)
-
-            let drago = create_p("text-center", dragodinde[0])
-            $(".list-div-dragodinde")[0].appendChild(drago)
-        }
-    })
-}
-
-function parchoKeyPress(e) {
-    $(".list-div-dragodinde")[0].innerHTML = ''
-    $(".list-div-parcho")[0].innerHTML = ''
-    dragodindes.map(dragodinde => {
-        if (dragodinde[2][0].indexOf(e.target.value) != -1 || e.target.value == "") {
-            let parcho = create_p("text-center", dragodinde[2])
-            $(".list-div-parcho")[0].appendChild(parcho)
-
-            let drago = create_p("text-center", dragodinde[0])
-            $(".list-div-dragodinde")[0].appendChild(drago)
+        if (dragodinde[0][0].toLocaleLowerCase().indexOf(e.target.value) != -1 || dragodinde[2][0].toLocaleLowerCase().indexOf(e.target.value) != -1 || e.target.value == '') {
+            let divLine = create_div('ressource-line row')
+            let pName = create_p("parchemin-name", dragodinde[2])
+            divLine.appendChild(pName)
+            let pLine = create_p("parchemin-count", dragodinde[0])
+            divLine.appendChild(pLine)
+            $(".parcho-container")[0].appendChild(divLine)
         }
     })
 }
