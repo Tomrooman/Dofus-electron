@@ -148,6 +148,12 @@ input:focus {
     color : rgb(206, 194, 193);
 }
 
+.craft-title {
+    color : rgb(206, 194, 193);
+    padding-top : 1rem;
+    padding-bottom : 0.5rem;
+}
+
 .parcho-div p {
     border-bottom : 1px solid rgba(92, 92, 92, 0.733);
     padding-bottom : 1rem;

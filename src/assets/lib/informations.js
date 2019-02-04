@@ -8,12 +8,10 @@ function show_informations(showOrRemove = "show") {
     $('.principal-container')[0].className = "principal-container"
     let infos_title = create_h('h2', 'infos-title text-center', 'Informations')
     $('.principal-container')[0].appendChild(infos_title)
-    let infos = json.infos
-    let keys = Object.keys(infos)
-    let values = Object.values(infos)
-    keys.forEach((key, index) => {
+    let keys = Object.keys(json.infos).sort()
+    keys.forEach(key => {
         let div = ''
-        let value = values[index]
+        let value = json.infos[key]
         let title = create_h("h4", false, key)
         let p = create_p(false, value)
         if (showOrRemove == "show") {

@@ -1,4 +1,4 @@
-let dragodindes = [
+var dragodindes = [
     [
         ['Dragodinde amande'], ['48H'], ["Parchemin doré"]
     ],
@@ -261,5 +261,150 @@ let dragodindes = [
 
     [
         ['Dragodinde prune et emeraude'], ['156H'], ["Puissant parchemin de intelligence"]
+    ]
+];
+
+var crafts = [
+    ["abreuvoir", [
+        ["bulbig brozeur", ["Essence de bulbig brozeur", 1, "Fluide glacial", 1, "Tatouage de mauvais garçon", 2,
+            "Bout de blop reinette", 1, "Peau de dragoeuf guerrier", 1
+        ]
+        ]
+    ]
+    ],
+
+    ["baffeur", [
+        ["gelee royale", ["Essence de gelée royale", 1, "Coque endommagée", 2, "Carapace rouge", 2, "Queue de scordion bleu", 1,
+            "Patte de corbac", 1, "Poils de yokai firefoux", 1
+        ]],
+
+        ["nelween", ["Essence de nelween", 1, "Griffe de robionicle", 2, "Carapace jaune", 2,
+            "Queue de scordion bleu", 1, "Poil de renarbo", 1, "Poils de maho firefoux", 1,
+            "Efficacite", 50, "Utilisations", 2400
+        ]],
+
+        ["rat blanc", ["Essence de rat blanc", 1, "Charniere cassee", 2, "Carapace rouge", 2,
+            "Ecailles d'ouroboulos", 1, "Poil de renarbo", 1, "Poils de soryo firefoux", 1,
+            "Carpelle de brouture", 1, "Efficacite", 120, "Utilisations", 1500
+        ]]
+    ]
+    ],
+
+    ["caresseur", [
+        ["royalmouth", ["Essence de royalmouth", 1, "Miroir de dopeul", 2, "Defense du sanglier", 2,
+            "Glande d'arak-hai", 1, "Peau de serpentin", 1, "Fleur de gloutovore", 1, "Moustaches de cactoblongo", 1,
+            "Efficacite", 120, "Utilisations", 1500
+        ]],
+
+        ["wa wobot", ["Essence de wa wobot", 1, "Miroir de dopeul", 2, "Groin de sanglier", 2,
+            "Glande d'arak-hai", 1, "Souris verte", 1, "Trukikol mort", 1, "Efficacite", 90, "Utilisations", 1200
+        ]],
+
+        ["craqueleur legendaire", ["Essence de craqueleur legendaire", 1, "Miroir de dopeul", 2, "Poils du milimulou", 2,
+            "Glande d'arak-hai", 1, "Aile de bourdard", 1, "Feuille de fourbasse", 1, "Efficacite", 90, "Utilisations", 1200
+        ]]
+    ]
+    ],
+
+    ["clef", [
+        ["donjon dragoeuf", ["Pierre d'aerotrugobur le malveillant", 1, "Pierre d'aqualikros l'impitoyable", 1,
+            "Pierre d'ignerkocropos l'affame", 1, "Pierre de terraburkal le perfide", 1
+        ]],
+
+        ["dramak", ["Etain", 5, "Oreille de rhinoferoce", 1, "Dent de molette", 1,
+            "Plume de gobvious", 1, "Patte de bouledogre", 1, "Edelweiss", 5,
+            "Bois d'if", 5, "Seigle", 5
+        ]],
+
+        ["mallefisk", ["Piece de koffrefor", 1, "Or", 10, "Ficelle en lin", 10,
+            "Corne de berserkoffre", 1, "Langue de mimikado", 1, "Corde de boursoin", 1, "Antenne de tresantene", 1
+        ]],
+
+        ["mansot", ["Plume du timansot", 1, "Poil de barbe du shamansot", 1, "Peau de mansobese", 1,
+            "Duvet de mamansot", 1, "Queue du fu mansot", 1, "Bois de noisetier", 10, "Argent", 10,
+            "Pince de crabe hijacob", 1
+        ]],
+
+        ["royalmouth", ["Poil de chachachovage", 1, "Plume de gelikan", 1, "Oreille de bouftonmouth", 1, "Laine de boufmouth legendaire", 1,
+            "Corne de boufmouth de guerre", 1, "Laine de boufmouth", 1, "Silicate", 10, "Bois de bambou", 10
+        ]],
+
+        ["sanctuaire dragoeuf", ["Fragment de coquille d'aerohouctor le guerrier", 1, "Fragment de coquille de terrakoubiak le guerrier", 1,
+            "Fragment de coquille d'ignelicrobur le guerrier", 1, "Fragment de coquille d'aquabralak le guerrier", 1,
+            "Oeuf de dragoeuf blanc", 1
+        ]]
+    ]
+    ],
+
+    ["essence", [
+        ["bulbig brozeur", ["Ecorce magique de bulbig brozeur", 1, "Racine de bulbig brozeur", 10
+        ]],
+
+        ["craqueleur legendaire", ["Pierre du craqueleur legendaire", 10, "Mega pierre du craqueleur legendaire", 1
+        ]],
+
+        ["gelee royale", ["Gelée bleutée royale", 1, "Gelée citron royale", 1, "Gelée fraise royale", 1, "Gelée menthe royale", 1
+        ]],
+
+        ["nelween", ["Fiole de fumee de nelween", 1, "Duvet de nelween", 10
+        ]],
+
+        ["pounicheur", ["Glande du pounicheur", 10
+        ]],
+
+        ["kanniboul", ["Carniflore", 10, "Cagoule du kanniboul ebil", 1
+        ]]
+    ]
+    ],
+
+    ["foudroyeur", [
+        ["pounicheur", ["Essence de pounicheur", 1, "Trident casse", 2, "Pousses de bulbambou", 2, "Oreilles de croc gland", 1,
+            "Peau de kitsou nufeu", 1, "Criniere de troollaraj", 1, "Queue d'ecumouth", 1, "Efficacite", 70, "Utilisations", '15 000'
+        ]]
+    ]
+    ],
+
+    ["mangeoire", [
+        ["kanniboul", ["Essence de kanniboul ebil", 1, "Poils de barbe du bwork mage", 2,
+            "Lamelle de champa rouge", 2, "Plume de gelikan", 1, "Peau de krambwork", 1,
+            "Queue du mulou", 1, "Efficacite", 90, 'Utilisations', 6000
+        ]]
+    ]
+    ],
+
+    ["potion", [
+        ["bonta", ["Riz", 6, "Pepite", 1
+        ]],
+
+        ["rappel", ["Sauge", 4, "Eau potable", 1
+        ]],
+
+        ["destination", ["Pince du crabe", 1, "Gland", 1, "Eau potable", 1
+        ]],
+    ]
+    ],
+
+    ["viande", [
+        ["boudin noir", ["Viande maceree", 1, "Malt", 1, "Sang de scorbute", 1
+        ]],
+
+        ["grillade brakmarienne", ["Viande saignante", 1, "Seigle", 1, "Cendres eternelles", 1
+        ]],
+
+        ["marinade sucreesalee", ["Viande persillee", 1, "Seigle", 1, "Cerise", 1
+        ]],
+
+        ["terrine bontarienne", ["Viande sanguinolente", 1, "Houblon", 1, "Graisse gélatineuse", 1
+        ]],
+
+        ["pemmican haricots", ["Viande sèchée", 1, "Lin", 1, "Haricot", 1
+        ]],
+
+        ["poelee paysanne", ["Viande exsudative", 1, "Lin", 1, "Aubergine", 1
+        ]],
+
+        ["potaufeu gouteux", ["Viande rassie", 1, "Houblon", 1, "Dose de jus goutu", 1
+        ]]
+    ]
     ]
 ];
