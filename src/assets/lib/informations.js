@@ -4,6 +4,8 @@ let input = ''
 let last_infos_value = ''
 
 function show_informations(showOrRemove = "show") {
+    $('.top-infos')[0].innerHTML = ''
+    $('.top-infos').hide()
     $('.principal-container')[0].innerHTML = ''
     $('.principal-container')[0].className = "principal-container"
     let infos_title = create_h('h2', 'infos-title text-center', 'Informations')

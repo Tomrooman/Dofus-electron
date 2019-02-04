@@ -1,4 +1,6 @@
 function lastDragodindes() {
+    $('.top-infos')[0].innerHTML = ''
+    $('.top-infos').hide()
     $('.principal-container')[0].innerHTML = ''
     $('.principal-container')[0].className = "principal-container"
     let ressourceDiv = create_div('text-center principal-parcho-div')
@@ -25,8 +27,15 @@ function lastDragodindes() {
     }
     $('.principal-container')[0].appendChild(ressourceDiv)
     let bottomChoice = create_div('bottom-choice')
+    let rmvLast = create_button('btn', "Supprimer la dernière dragodinde fécondée", rmvLastDD)
+    bottomChoice.appendChild(rmvLast)
     render_home_button(bottomChoice)
     $('.principal-container')[0].style.maxHeight = ($(window).height() - $('.bottom-choice').height()) + "px"
+}
+
+function rmvLastDD() {
+    json["last"][0] = ''
+    show_home()
 }
 
 function myddResearch(e) {

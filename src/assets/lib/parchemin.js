@@ -1,4 +1,6 @@
 function show_parchemin() {
+    $('.top-infos')[0].innerHTML = ''
+    $('.top-infos').hide()
     $('.principal-container')[0].innerHTML = ''
     $('.principal-container')[0].className = "principal-container"
     let titleH = create_h('h2', 'craft-title text-center', "Parchemins")

@@ -1,3 +1,24 @@
+.top-infos {
+    position : absolute;
+    width : 80%;
+    margin-left : 10%;
+    background-color : rgba(49, 49, 49, 0.733);
+    box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
+    color : rgb(206, 194, 193);
+    border : 1px solid rgba(92, 92, 92, 0.733);
+}
+
+.top-infos h4 {
+    color : rgb(206, 194, 193);
+    background-color: rgb(24, 24, 24);
+    padding-top : 0.5rem;
+    padding-bottom : 0.5rem;
+}
+
+.top-infos p {
+    padding-top : 0.5rem;
+}
+
 body {
     background-color: rgb(24, 24, 24);
     font-family: 'Carter One', cursive;

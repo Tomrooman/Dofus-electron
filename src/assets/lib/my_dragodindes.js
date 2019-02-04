@@ -1,4 +1,6 @@
 function myDragodindes() {
+    $('.top-infos')[0].innerHTML = ''
+    $('.top-infos').hide()
     $('.principal-container')[0].innerHTML = ''
     $('.principal-container')[0].className = "principal-container"
     let ressourceDiv = create_div('text-center principal-parcho-div')
