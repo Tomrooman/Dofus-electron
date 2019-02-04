@@ -22,6 +22,7 @@ input:focus {
     padding-bottom : 1rem;
     width : 100%;
     border-bottom : 1px solid rgb(133, 90, 84);
+    background-color : rgba(49, 49, 49, 0.733);
     color : rgb(180, 78, 75);
     font-size : 1.2rem;
 }
@@ -104,8 +105,9 @@ input:focus {
 }
 
 .infos-title {
-    margin-top : 2rem;
-    margin-bottom : 2rem;
+    padding-top : 1rem;
+    padding-bottom : 1rem;
+    margin-bottom : 0.5rem;
     color : rgb(206, 194, 193);
     letter-spacing: 0.3rem;
 }
@@ -151,7 +153,8 @@ input:focus {
 .craft-title {
     color : rgb(206, 194, 193);
     padding-top : 1rem;
-    padding-bottom : 0.5rem;
+    padding-bottom : 1rem;
+    margin-bottom : 2rem;
 }
 
 .parcho-div p {
@@ -170,4 +173,69 @@ input:focus {
     width : 80%;
     margin-left : auto;
     margin-right : auto;
+}
+
+.category {
+    color : rgb(206, 194, 193);
+    padding-top : 0.8rem;
+    padding-bottom : 0.4rem;
+    width : 70%;
+    margin-left : auto;
+    margin-right : auto;
+    border-radius : 10px;
+    box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
+}
+
+.craft-title, .infos-title {
+    background-color : rgb(61, 61, 61);
+    border-bottom : 1px solid rgba(92, 92, 92, 0.733);
+    border-top : 1px solid rgba(92, 92, 92, 0.733);
+}
+
+.category:hover {
+    transition: all 0.2s ease-out;
+    transform: translateX(7%);
+    background-color : rgba(49, 49, 49, 0.733);
+    color : rgb(180, 78, 75);
+
+}
+
+.ressource-line {
+    margin-left : auto;
+    margin-right : auto;
+    color : rgb(206, 194, 193);
+    padding-top : 1rem;
+}
+
+.principal-ressource-div {
+    border : 1px solid rgba(92, 92, 92, 0.733);
+    border-radius : 10px;
+    width : 70%;
+    margin-left : auto;
+    margin-right : auto;
+    box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
+    margin-bottom : 2rem;
+}
+
+.principal-ressource-div div:nth-child(2n+2) {
+    background-color : rgba(46, 46, 46, 0.788);
+}
+
+.principal-ressource-div div:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.ressource-count {
+    text-align : right;
+}
+
+.ressource-name {
+    width : 80%;
+    padding-left : 1rem;
+}
+
+.ressource-count {
+    padding-right : 1rem;
+    width : 20%;
 }
