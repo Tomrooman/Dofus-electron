@@ -32,7 +32,6 @@ function make_content(categoryDiv, array, selectItem = false, selectedCategory =
   });
   $('.principal-container')[0].appendChild(categoryDiv);
   appearEffect($('.' + categoryDiv.className.split(' ')[1]))
-  //console.log($('.' + categoryDiv.className)[0])
   const bottomChoice = create_div('bottom-choice');
   if (selectItem) {
     const returnCategory = create_button('btn', 'Retourner aux catégories', () => { show_craft(); });

@@ -1,4 +1,5 @@
 let json = require('./assets/dofus-electron.json')
+var moment = require('moment');
 
 $('.btn-infos')[0].onclick = function (event) {
     show_informations('show')
@@ -38,7 +39,7 @@ function render_top_infos() {
     if (json['last'] != '') {
         let topTitle = create_h("h4", 'text-center top-title', "Dernière dragodinde fécondée")
         $('.top-infos')[0].appendChild(topTitle)
-        let topText = create_p('text-center top-text', json["last"])
+        let topText = create_p('text-center top-text', json["last"][0])
         $('.top-infos')[0].appendChild(topText)
         let topPosition = $('.home-menu')[0].style.top.substr(0, $('.home-menu')[0].style.top.length - 2)
         $('.top-infos')[0].style.top = (topPosition - 125) + "px"

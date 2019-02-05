@@ -52,6 +52,7 @@ function myddResearch(e) {
 
 function addLastDD() {
     json['last'][0] = this.children[0].innerHTML
+    json['last'][1] = moment().format("DD/MM/YYYY HH:mm")
     let dds = json['Mes dragodindes'].filter((drago, index) => {
         if (drago != this.children[0].innerHTML && drago != null) {
             return drago
