@@ -12,7 +12,7 @@ function show_craft() {
 
 function make_content(categoryDiv, array, selectItem = false, selectedCategory = '') {
   array.map((craft, index) => {
-    const oneCategory = create_div('text-center  category');
+    const oneCategory = create_div('text-center  category ' + craft[0]);
     if (index == 0) {
       oneCategory.style.borderTop = '1px solid rgba(92, 92, 92, 0.733)';
       oneCategory.style.borderBottom = '1px solid rgba(92, 92, 92, 0.733)';
@@ -31,6 +31,8 @@ function make_content(categoryDiv, array, selectItem = false, selectedCategory =
     categoryDiv.appendChild(oneCategory);
   });
   $('.principal-container')[0].appendChild(categoryDiv);
+  appearEffect($('.' + categoryDiv.className.split(' ')[1]))
+  //console.log($('.' + categoryDiv.className)[0])
   const bottomChoice = create_div('bottom-choice');
   if (selectItem) {
     const returnCategory = create_button('btn', 'Retourner aux catégories', () => { show_craft(); });

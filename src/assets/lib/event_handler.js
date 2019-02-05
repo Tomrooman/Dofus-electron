@@ -73,6 +73,18 @@ function render_home_button(bottomChoice) {
     $('.principal-container')[0].appendChild(bottomChoice)
 }
 
+function appearEffect(selectedDiv) {
+    selectedDiv.children().map((index, div) => {
+        div.style.opacity = "0"
+        setTimeout(() => {
+            $('.' + div.className.split(' ')[3]).animate({
+                opacity: 1
+            }, 200)
+        }, (index + 1) * 100)
+
+    })
+}
+
 function leftToRight(selectedDiv, menu = false) {
     if (menu) {
         selectedDiv.children().map((index, div) => {
@@ -80,7 +92,7 @@ function leftToRight(selectedDiv, menu = false) {
             setTimeout(() => {
                 $('.' + div.className.substr(4, div.className.length - 4)).animate({
                     opacity: 1
-                }, 300)
+                }, 200)
             }, (index + 1) * 100)
 
         })
@@ -92,6 +104,6 @@ function leftToRight(selectedDiv, menu = false) {
         selectedDiv.animate({
             left: "+=300",
             opacity: 1
-        }, 300)
+        }, 200)
     }
 }
