@@ -34,6 +34,7 @@ function lastDragodindes() {
 function rmvLastDD() {
   json.last[0] = '';
   json.last[1] = '';
+  json.last[2] = '';
   fs.writeFileSync(`${__dirname}/assets/dofus-electron.json`, JSON.stringify(json));
   show_home();
 }
@@ -53,6 +54,11 @@ function myddResearch(e) {
 function addLastDD() {
   json.last[0] = this.children[0].innerHTML;
   json.last[1] = moment().format('DD/MM/YYYY HH:mm');
+  dragodindes.map(dragodinde => {
+    if (dragodinde[0][0] == this.children[0].innerHTML) {
+      json.last[2] = dragodinde[1][0].substr(0, dragodinde[1][0].length - 1)
+    }
+  });
   const dds = json['Mes dragodindes'].filter((drago, index) => {
     if (drago != this.children[0].innerHTML && drago != null) {
       return drago;

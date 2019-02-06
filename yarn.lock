@@ -2284,9 +2284,10 @@ es6-set@~0.1.5:
     es6-symbol "3.1.1"
     event-emitter "~0.3.5"
 
-es6-symbol@3.1.1, es6-symbol@^3.1.1, es6-symbol@~3.1.1:
+es6-symbol@3.1.1, es6-symbol@^3.1.0, es6-symbol@^3.1.1, es6-symbol@~3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/es6-symbol/-/es6-symbol-3.1.1.tgz#bf00ef4fdab6ba1b46ecb7b629b4c7ed5715cc77"
+  integrity sha1-vwDvT9q2uhtG7Le2KbTH7VcVzHc=
   dependencies:
     d "1"
     es5-ext "~0.10.14"
@@ -3953,6 +3954,13 @@ mksnapshot@^0.3.0, mksnapshot@^0.3.4:
     decompress-zip "0.3.0"
     fs-extra "0.26.7"
     request "2.x"
+
+moment-range@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/moment-range/-/moment-range-4.0.1.tgz#1ae8cf209dded0a5ce5e16603146265b3906a86f"
+  integrity sha1-GujPIJ3e0KXOXhZgMUYmWzkGqG8=
+  dependencies:
+    es6-symbol "^3.1.0"
 
 moment@^2.24.0:
   version "2.24.0"

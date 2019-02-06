@@ -123,7 +123,8 @@ function addThisDD() {
 }
 
 function rmvThisDD() {
-    delete json['Mes dragodindes'][this.children[0].innerHTML]
+    var index = json['Mes dragodindes'].indexOf(this.children[0].innerHTML);
+    json['Mes dragodindes'].splice(index, 1);
     fs.writeFileSync(__dirname + '/assets/dofus-electron.json', JSON.stringify(json));
     myDragodindes()
 }

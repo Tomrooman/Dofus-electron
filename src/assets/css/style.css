@@ -6,6 +6,8 @@
     box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
     color : rgb(206, 194, 193);
     border : 1px solid rgba(92, 92, 92, 0.733);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .top-infos h4 {
@@ -370,6 +372,15 @@ input:focus {
     text-align : right;
     padding-right : 2rem;
     width : 40%;
+}
+
+.accouch-date {
+    color : rgb(206, 194, 193);
+    padding-bottom : 2rem;
+}
+
+.accouch-last {
+    color : rgb(206, 194, 193);
 }
 
 .parchemin-count {
