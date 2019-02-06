@@ -12,7 +12,13 @@ function show_craft() {
 
 function make_content(categoryDiv, array, selectItem = false, selectedCategory = '') {
   array.map((craft, index) => {
-    const oneCategory = create_div('text-center  category ' + craft[0]);
+    let oneCategory;
+    if (selectedCategory && selectedCategory == 'Baffeur' || selectedCategory == 'Caresseur' ||
+    selectedCategory == 'Foudroyeur' || selectedCategory == 'Mangeoire' || selectedCategory == 'Abreuvoir') {
+      oneCategory = create_div(`text-left category ${craft[0]} row`);
+    } else {
+      oneCategory = create_div(`text-center category ${craft[0]}`);
+    }
     if (index == 0) {
       oneCategory.style.borderTop = '1px solid rgba(92, 92, 92, 0.733)';
       oneCategory.style.borderBottom = '1px solid rgba(92, 92, 92, 0.733)';
@@ -26,12 +32,21 @@ function make_content(categoryDiv, array, selectItem = false, selectedCategory =
     } else {
       oneCategory.onclick = () => { select_category(craft[0]); };
     }
-    const category = create_h('h5', false, craft[0]);
-    oneCategory.appendChild(category);
+
+    if (selectedCategory && selectedCategory == 'Baffeur' || selectedCategory == 'Caresseur' ||
+    selectedCategory == 'Foudroyeur' || selectedCategory == 'Mangeoire' || selectedCategory == 'Abreuvoir') {
+      const category = create_h('h5', 'craft-category-name', craft[0]);
+      oneCategory.appendChild(category);
+      const categoryEfficacite = create_h('h5', 'craft-category-efficacite text-right', 'test');
+      oneCategory.appendChild(categoryEfficacite);
+    } else {
+      const category = create_h('h5', false, craft[0]);
+      oneCategory.appendChild(category);
+    }
     categoryDiv.appendChild(oneCategory);
   });
   $('.principal-container')[0].appendChild(categoryDiv);
-  appearEffect($('.' + categoryDiv.className.split(' ')[1]))
+  appearEffect($(`.${categoryDiv.className.split(' ')[1]}`));
   const bottomChoice = create_div('bottom-choice');
   if (selectItem) {
     const returnCategory = create_button('btn', 'Retourner aux catégories', () => { show_craft(); });

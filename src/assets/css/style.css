@@ -15,6 +15,14 @@
     padding-bottom : 0.5rem;
 }
 
+.craft-category-name {
+    width : 80%;
+}
+
+.craft-category-efficacite {
+    width : 20%;
+}
+
 .top-infos p {
     padding-top : 0.5rem;
 }
