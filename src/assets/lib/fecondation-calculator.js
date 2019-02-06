@@ -7,7 +7,11 @@ function calculFecondation() {
   $('.principal-container')[0].appendChild(infos_title);
   const ressourceDiv = create_div('text-center principal-parcho-div');
   if (json['Mes dragodindes'].length) {
-    calculate(ressourceDiv);
+    if (json.last[0]) {
+      calculate_with_last(ressourceDiv);
+    } else {
+      calculate_without_last(ressourceDiv);
+    }
   } else {
     ressourceDiv.appendChild(create_h('h5', false, 'Aucune dragodidne'));
     $('.principal-container')[0].appendChild(ressourceDiv);
@@ -18,26 +22,31 @@ function calculFecondation() {
   $('.principal-container')[0].style.maxHeight = `${$(window).height() - $('.bottom-choice').height()}px`;
 }
 
-function calculate(ressourceDiv) {
-  const parchoContainer = create_div('parcho-container');
+function calculate_without_last(ressourceDiv) {
+  const date_base = moment();
   const sortedMyDD = sort_my_dd();
-  let date_base;
-  if (json.last[0]) {
-    date_base = moment(json.last[1], 'DD/MM/YYYY HH:mm').toDate();
-  } else {
-    date_base = moment();
-  }
-  sortedMyDD.map((drago) => {
+  const parchoContainer = create_div('parcho-container');
+  sortedMyDD.map((drago, index) => {
     const divLine = create_div('ressource-line row');
     const dateObject = moment().format('DD/MM/YYYY HH:mm');
     const pName = create_p('fecond-name', drago.name);
     divLine.appendChild(pName);
-    const pLine = create_p('fecond-count', drago.time);
+    let pLine;
+    if (index == 0) {
+      pLine = create_p('fecond-count', drago.time);
+    } else {
+      pLine = create_p('fecond-count', drago.time);
+    }
     divLine.appendChild(pLine);
     parchoContainer.appendChild(divLine);
     ressourceDiv.appendChild(parchoContainer);
   });
   $('.principal-container')[0].appendChild(ressourceDiv);
+}
+
+function calculate_with_last(ressourceDiv) {
+  const date_base = moment(json.last[1], 'DD/MM/YYYY HH:mm').toDate();
+  const sortedMyDD = sort_my_dd();
 }
 
 function sort_my_dd() {
