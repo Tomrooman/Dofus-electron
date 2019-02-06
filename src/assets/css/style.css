@@ -17,10 +17,12 @@
 
 .craft-category-name {
     width : 80%;
+    padding-left : 4rem;
 }
 
 .craft-category-efficacite {
     width : 20%;
+    padding-right : 4rem;
 }
 
 .top-infos p {

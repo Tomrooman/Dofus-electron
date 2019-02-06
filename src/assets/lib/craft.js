@@ -37,7 +37,7 @@ function make_content(categoryDiv, array, selectItem = false, selectedCategory =
     selectedCategory == 'Foudroyeur' || selectedCategory == 'Mangeoire' || selectedCategory == 'Abreuvoir') {
       const category = create_h('h5', 'craft-category-name', craft[0]);
       oneCategory.appendChild(category);
-      const categoryEfficacite = create_h('h5', 'craft-category-efficacite text-right', 'test');
+      const categoryEfficacite = create_h('h5', 'craft-category-efficacite text-right', craft[1][craft[1].length - 3]);
       oneCategory.appendChild(categoryEfficacite);
     } else {
       const category = create_h('h5', false, craft[0]);

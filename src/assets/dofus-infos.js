@@ -267,7 +267,7 @@ const dragodindes = [
 const crafts = [
   ['Abreuvoir', [
     ['Bulbig brozeur', ['Essence de bulbig brozeur', 1, 'Fluide glacial', 1, 'Tatouage de mauvais garçon', 2,
-      'Bout de blop reinette', 1, 'Peau de dragoeuf guerrier', 1,
+      'Bout de blop reinette', 1, 'Peau de dragoeuf guerrier', 1, 'Efficacité', 50, 'Utilisations', 2500,
     ],
     ],
   ],
@@ -275,7 +275,7 @@ const crafts = [
 
   ['Baffeur', [
     ['Gelée royale', ['Essence de gelée royale', 1, 'Coque endommagée', 2, 'Carapace rouge', 2, 'Queue de scordion bleu', 1,
-      'Patte de corbac', 1, 'Poils de yokai firefoux', 1,
+      'Patte de corbac', 1, 'Poils de yokai firefoux', 1, 'Efficacité', 90, 'Utilisations', 1200,
     ]],
 
     ['Nelween', ['Essence de nelween', 1, 'Griffe de robionicle', 2, 'Carapace jaune', 2,
