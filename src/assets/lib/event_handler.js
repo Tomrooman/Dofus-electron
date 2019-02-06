@@ -1,5 +1,6 @@
 const json = require('./assets/dofus-electron.json');
 const moment = require('moment');
+const _ = require('lodash');
 
 $('.btn-infos')[0].onclick = function (event) {
   show_informations('show');
