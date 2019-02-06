@@ -36,7 +36,7 @@ $(document).ready(() => {
 });
 
 function render_top_infos() {
-  if (json.last != '') {
+  if (json.last[0] != '') {
     const topTitle = create_h('h4', 'text-center top-title', 'Dernière dragodinde fécondée');
     $('.top-infos')[0].appendChild(topTitle);
     const topText = create_p('text-center top-text', json.last[0]);
@@ -44,8 +44,8 @@ function render_top_infos() {
     const topPosition = $('.home-menu')[0].style.top.substr(0, $('.home-menu')[0].style.top.length - 2);
     $('.top-infos')[0].style.top = `${topPosition - 125}px`;
     leftToRight($('.top-infos'));
-    leftToRight($('.home-menu'), true);
   }
+  leftToRight($('.home-menu'), true);
 }
 
 function show_home() {

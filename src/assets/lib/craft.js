@@ -16,8 +16,14 @@ function make_content(categoryDiv, array, selectItem = false, selectedCategory =
     if (selectedCategory && selectedCategory == 'Baffeur' || selectedCategory == 'Caresseur' ||
     selectedCategory == 'Foudroyeur' || selectedCategory == 'Mangeoire' || selectedCategory == 'Abreuvoir') {
       oneCategory = create_div(`text-left category ${craft[0]} row`);
+      const category = create_h('h5', 'craft-category-name', craft[0]);
+      oneCategory.appendChild(category);
+      const categoryEfficacite = create_h('h5', 'craft-category-efficacite text-right', craft[1][craft[1].length - 3]);
+      oneCategory.appendChild(categoryEfficacite);
     } else {
       oneCategory = create_div(`text-center category ${craft[0]}`);
+      const category = create_h('h5', false, craft[0]);
+      oneCategory.appendChild(category);
     }
     if (index == 0) {
       oneCategory.style.borderTop = '1px solid rgba(92, 92, 92, 0.733)';
@@ -31,17 +37,6 @@ function make_content(categoryDiv, array, selectItem = false, selectedCategory =
       oneCategory.onclick = () => { select_item(craft[0], selectedCategory); };
     } else {
       oneCategory.onclick = () => { select_category(craft[0]); };
-    }
-
-    if (selectedCategory && selectedCategory == 'Baffeur' || selectedCategory == 'Caresseur' ||
-    selectedCategory == 'Foudroyeur' || selectedCategory == 'Mangeoire' || selectedCategory == 'Abreuvoir') {
-      const category = create_h('h5', 'craft-category-name', craft[0]);
-      oneCategory.appendChild(category);
-      const categoryEfficacite = create_h('h5', 'craft-category-efficacite text-right', craft[1][craft[1].length - 3]);
-      oneCategory.appendChild(categoryEfficacite);
-    } else {
-      const category = create_h('h5', false, craft[0]);
-      oneCategory.appendChild(category);
     }
     categoryDiv.appendChild(oneCategory);
   });
