@@ -21,7 +21,7 @@ function calculFecondation() {
     ressourceDiv.appendChild(create_p('no-dd-title', 'Aucune dragodinde'));
     $('.principal-container')[0].appendChild(ressourceDiv);
   }
-    // $('.principal-container')[0].appendChild(div);
+  // $('.principal-container')[0].appendChild(div);
   const bottomChoice = create_div('bottom-choice');
   render_home_button(bottomChoice);
   $('.principal-container')[0].style.maxHeight = `${$(window).height() - $('.bottom-choice').height()}px`;
@@ -40,14 +40,19 @@ function calculate_without_last(ressourceDiv) {
     let pLine;
     if (index == 0) {
       date_accouchement.add(drago.time, 'hours');
-      pLine = create_p('fecond-count', 'Maintenant');
+      pLine = create_p('fecond-count fecond-now', 'Maintenant');
       last_time = drago.time;
     } else if (drago.time < last_time) {
       addHours = (last_time - drago.time) + addHours;
-      pLine = create_p('fecond-count', `Dans ${addHours}H | ${moment().add(addHours, 'hours').format('DD/MM/YYYY HH:mm')}`);
+      pLine = create_p('fecond-count', `Dans ${addHours}H - ${moment().add(addHours, 'hours').format('DD/MM/YYYY HH:mm')}`);
       last_time = drago.time;
     } else {
-      pLine = create_p('fecond-count', 'Maintenant');
+      if (addHours) {
+        pLine = create_p('fecond-count', `Dans ${addHours}H - ${moment().add(addHours, 'hours').format('DD/MM/YYYY HH:mm')}`);
+      }
+      else {
+        pLine = create_p('fecond-count fecond-now', 'Maintenant');
+      }
     }
     divLine.appendChild(pLine);
     parchoContainer.appendChild(divLine);
@@ -71,7 +76,7 @@ function calculate_with_last(ressourceDiv) {
     let pLine;
     if (index == 0) {
       if (json.last[2] - drago.time == 0) {
-        pLine = create_p('fecond-count', 'Maintenant');
+        pLine = create_p('fecond-count fecond-now', 'Maintenant');
         date_accouchement = moment(json.last[1], 'DD/MM/YYYY HH:mm').add(json.last[2], 'hours');
       } else {
         const ddTime = moment(json.last[1], 'DD/MM/YYYY HH:mm').add(json.last[2] - drago.time, 'hours');
@@ -80,11 +85,11 @@ function calculate_with_last(ressourceDiv) {
         const oneAccouchDate = moment().add(hours.length, 'hours');
         if (hours.length > 0) {
           date_accouchement = moment(json.last[1], 'DD/MM/YYYY HH:mm').add(json.last[2], 'hours');
-          pLine = create_p('fecond-count', `Dans ${hours.length}H | ${oneAccouchDate.format('DD/MM/YYYY HH:mm')}`);
+          pLine = create_p('fecond-count', `Dans ${hours.length}H - ${oneAccouchDate.format('DD/MM/YYYY HH:mm')}`);
           addHours = hours.length;
         } else {
           date_accouchement = moment().add(drago.time, 'hours');
-          pLine = create_p('fecond-count', 'Maintenant');
+          pLine = create_p('fecond-count fecond-now', 'Maintenant');
         }
       }
       last_time = drago.time;
@@ -93,7 +98,12 @@ function calculate_with_last(ressourceDiv) {
         addHours = (last_time - drago.time) + addHours;
         pLine = create_p('fecond-count', `Dans ${addHours}H | ${moment().add(addHours, 'hours').format('DD/MM/YYYY HH:mm')}`);
       } else {
-        pLine = create_p('fecond-count', 'Maintenant');
+        if (addHours) {
+          pLine = create_p('fecond-count', `Dans ${addHours}H - ${moment().add(addHours, 'hours').format('DD/MM/YYYY HH:mm')}`);
+        }
+        else {
+          pLine = create_p('fecond-count fecond-now', 'Maintenant');
+        }
       }
       last_time = drago.time;
     }

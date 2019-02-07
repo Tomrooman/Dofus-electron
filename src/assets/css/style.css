@@ -17,6 +17,10 @@
     padding-bottom : 0.5rem;
 }
 
+.fecond-now {
+    color : rgb(64, 143, 163);
+}
+
 .btn-add:hover {
     color : rgb(64, 163, 64) !important;
     background-color: rgba(55, 63, 46, 0.733) !important;
