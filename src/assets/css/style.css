@@ -17,6 +17,16 @@
     padding-bottom : 0.5rem;
 }
 
+.btn-add:hover {
+    color : rgb(64, 163, 64) !important;
+    background-color: rgba(55, 63, 46, 0.733) !important;
+}
+
+.btn-remove:hover {
+    color : rgb(185, 57, 52) !important;
+    background-color: rgba(71, 47, 47, 0.733) !important;
+}
+
 .craft-category-name {
     width : 80%;
     padding-left : 4rem;
@@ -54,26 +64,54 @@ input:focus {
     padding-top : 1rem;
     padding-bottom : 1rem;
     width : 100%;
-    border-bottom : 1px solid rgb(133, 90, 84);
-    background-color : rgba(22, 22, 22, 0.281);
-    color : rgb(167, 63, 60);
     font-size : 1.2rem;
+    border-radius : 20px;
+    background-color : rgba(49, 49, 49, 0.733);
+    box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
+    color : rgb(206, 194, 193);
+    border-bottom : 1px solid rgba(92, 92, 92, 0.733);
+    border-left : 1px solid rgba(92, 92, 92, 0.733);
+    border-right : 1px solid rgba(92, 92, 92, 0.733);
 }
 
 .btn-infos {
-    border-top : 1px solid rgb(133, 90, 84);
+    box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
+    border-top : 1px solid rgba(92, 92, 92, 0.733);
+    border-radius : 20px;
+}
+
+.btn-home-return {
+    color : rgb(64, 143, 163);
+}
+
+.btn-home-return:hover {
+    color : rgb(64, 143, 163) !important;
+    background-color : rgb(41, 54, 58) !important;
+}
+
+.btn-add-infos {
+    border-radius : 0px;
 }
 
 .btn:hover {
     transition: all 0.2s ease-in-out;
     letter-spacing: 0.3rem;
-    color : rgb(206, 194, 193);
-    background: linear-gradient(to right, rgb(102, 46, 44));
+    color : rgb(185, 57, 52);
+    background-color: rgba(63, 46, 46, 0.733);
+}
+
+.btn-add {
+    color : rgb(64, 163, 64);
+}
+
+.btn-remove {
+    color : rgb(185, 57, 52);
 }
 
 .home-menu {
     position: absolute;
-    width : 100%;
+    width : 80%;
+    margin-left: 10%;
 }
 
 .infos-input {
@@ -82,14 +120,21 @@ input:focus {
 }
 
 .btn-home {
-    border-top : 1px solid rgb(133, 90, 84);
+    border-top : 1px solid rgba(92, 92, 92, 0.733);
+    border-radius : 20px;
 }
 
 .bottom-choice {
     position: absolute;
     bottom : 0;
     width: 100%;
-    border-top : 1px solid rgb(133, 90, 84);
+    border-top : 1px solid rgba(92, 92, 92, 0.733);
+    box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
+    border-radius : 20px;
+}
+
+.bottom-choice button {
+    border-radius : 0px !important;
 }
 
 .btn:focus {
@@ -137,7 +182,7 @@ input:focus {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    color : rgb(180, 78, 75);
+    color : rgb(185, 57, 52);
     background-color : rgba(49, 49, 49, 0.733);
     box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
 }
@@ -174,7 +219,7 @@ input:focus {
     margin-top : 0.5rem;
     margin-bottom : 1rem;
     border-radius : 10px;
-    color : rgb(180, 78, 75);
+    color : rgb(185, 57, 52);
     background-color : rgba(49, 49, 49, 0.733);
     box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
 }
@@ -224,7 +269,7 @@ input:focus {
     transition: all 0.2s ease-out;
     transform: translateX(7%);
     background-color : rgba(49, 49, 49, 0.733);
-    color : rgb(180, 78, 75);
+    color : rgb(185, 57, 52);
 
 }
 
@@ -242,7 +287,7 @@ input:focus {
 
 .ressource-line:hover {
     transition: all 0.2s ease-in-out;
-    color : rgb(180, 78, 75);
+    color : rgb(185, 57, 52);
 }
 
 .addDD-line, .rmvDD-line {
@@ -277,7 +322,7 @@ input:focus {
 
 .gestation-line:hover {
     transition: all 0.2s ease-in-out;
-    color : rgb(180, 78, 75);
+    color : rgb(185, 57, 52);
 }
 
 .principal-ressource-div {
@@ -402,7 +447,7 @@ input:focus {
 }
 
 .no-dd-title {
-    color : rgb(180, 78, 75);
+    color : rgb(185, 57, 52);
     padding-top : 1rem;
     font-size : 1.5rem;
 }

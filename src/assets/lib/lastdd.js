@@ -25,7 +25,7 @@ function lastDragodindes() {
   }
   $('.principal-container')[0].appendChild(ressourceDiv);
   const bottomChoice = create_div('bottom-choice');
-  const rmvLast = create_button('btn', 'Supprimer la dernière dragodinde fécondée', rmvLastDD);
+  const rmvLast = create_button('btn btn-remove', 'Supprimer la dernière dragodinde fécondée', rmvLastDD);
   bottomChoice.appendChild(rmvLast);
   render_home_button(bottomChoice);
   $('.principal-container')[0].style.maxHeight = `${$(window).height() - $('.bottom-choice').height()}px`;
@@ -54,9 +54,9 @@ function myddResearch(e) {
 function addLastDD() {
   json.last[0] = this.children[0].innerHTML;
   json.last[1] = moment().format('DD/MM/YYYY HH:mm');
-  dragodindes.map(dragodinde => {
+  dragodindes.map((dragodinde) => {
     if (dragodinde[0][0] == this.children[0].innerHTML) {
-      json.last[2] = dragodinde[1][0].substr(0, dragodinde[1][0].length - 1)
+      json.last[2] = dragodinde[1][0].substr(0, dragodinde[1][0].length - 1);
     }
   });
   const dds = json['Mes dragodindes'].filter((drago, index) => {
