@@ -79,18 +79,11 @@ function calculate_with_last(ressourceDiv) {
         const ddTime = moment(json.last[1], 'DD/MM/YYYY HH:mm').add(json.last[2] - drago.time, 'hours');
         const duration = momentR.range(ddTime, moment());
         const hours = Array.from(duration.by('hour', { excludeEnd: true }));
-        const days = Array.from(duration.by('day'));
         const oneAccouchDate = moment().add(hours.length, 'hours');
-        if (hours.length > 0) {
-          if (days.length >= 1) {
-            pLine = create_p('fecond-count fecond-now', 'Maintenant');
-            addHours = 0;
-            date_accouchement = moment().add(drago.time, 'hours');
-          } else {
-            pLine = create_p('fecond-count', `Dans ${hours.length}H - ${oneAccouchDate.format('DD/MM/YYYY HH:mm')}`);
-            addHours = hours.length;
-            date_accouchement = moment(json.last[1], 'DD/MM/YYYY HH:mm').add(json.last[2], 'hours');
-          }
+        if (ddTime.isAfter(moment())) {
+          pLine = create_p('fecond-count', `Dans ${hours.length}H - ${oneAccouchDate.format('DD/MM/YYYY HH:mm')}`);
+          addHours = hours.length;
+          date_accouchement = moment(json.last[1], 'DD/MM/YYYY HH:mm').add(json.last[2], 'hours');
         } else {
           date_accouchement = moment().add(drago.time, 'hours');
           pLine = create_p('fecond-count fecond-now', 'Maintenant');
@@ -100,7 +93,7 @@ function calculate_with_last(ressourceDiv) {
     } else {
       if (drago.time < last_time) {
         addHours = (last_time - drago.time) + addHours;
-        pLine = create_p('fecond-count', `Dans ${addHours}H | ${moment().add(addHours, 'hours').format('DD/MM/YYYY HH:mm')}`);
+        pLine = create_p('fecond-count', `Dans ${addHours}H - ${moment().add(addHours, 'hours').format('DD/MM/YYYY HH:mm')}`);
       } else if (addHours) {
         pLine = create_p('fecond-count', `Dans ${addHours}H - ${moment().add(addHours, 'hours').format('DD/MM/YYYY HH:mm')}`);
       } else {
