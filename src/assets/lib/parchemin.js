@@ -23,6 +23,7 @@ function show_parchemin() {
     let bottomChoice = create_div('bottom-choice')
     render_home_button(bottomChoice)
     $('.principal-container')[0].style.maxHeight = ($(window).height() - $('.bottom-choice').height()) + "px"
+    appearEffect2($('.principal-container'))
 }
 
 function dragodindeKeyPress(e) {

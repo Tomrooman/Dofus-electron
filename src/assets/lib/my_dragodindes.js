@@ -12,11 +12,11 @@ function myDragodindes() {
     input.oninput = myddResearch;
     ressourceDiv.appendChild(input);
     json['Mes dragodindes'].sort().map((dragodinde) => {
-        const divLine = create_div('ressource-line row');
-        const pName = create_p('mydd-name', dragodinde);
-        divLine.appendChild(pName);
-        parchoContainer.appendChild(divLine);
-      });
+      const divLine = create_div('ressource-line row');
+      const pName = create_p('mydd-name', dragodinde);
+      divLine.appendChild(pName);
+      parchoContainer.appendChild(divLine);
+    });
     ressourceDiv.appendChild(parchoContainer);
   } else {
     const nodd = create_p('text-center no-dd-title', 'Aucune dragodinde');
@@ -30,23 +30,24 @@ function myDragodindes() {
   bottomChoice.appendChild(addDDBtn);
   bottomChoice.appendChild(rmvDDBtn);
   render_home_button(bottomChoice);
-  $('.principal-container')[0].style.maxHeight = `${$(window).height() - $('.bottom-choice').height() }px`;
+  $('.principal-container')[0].style.maxHeight = `${$(window).height() - $('.bottom-choice').height()}px`;
+  appearEffect2($('.principal-container'))
 }
 
 function myddResearch(e, remove = false) {
   $('.parcho-container')[0].innerHTML = '';
   json['Mes dragodindes'].map((dragodinde) => {
     if (e.target.value == '' || dragodinde.toLowerCase().indexOf(e.target.value.toLowerCase()) != -1) {
-        let divLine;
-        if (remove == 'remove') {
-            divLine = create_div('rmvDD-line row', addThisDD);
-          } else {
-            divLine = create_div('ressource-line row', addThisDD);
-          }
-        const pName = create_p('mydd-name', dragodinde);
-        divLine.appendChild(pName);
-        $('.parcho-container')[0].appendChild(divLine);
+      let divLine;
+      if (remove == 'remove') {
+        divLine = create_div('rmvDD-line row', addThisDD);
+      } else {
+        divLine = create_div('ressource-line row', addThisDD);
       }
+      const pName = create_p('mydd-name', dragodinde);
+      divLine.appendChild(pName);
+      $('.parcho-container')[0].appendChild(divLine);
+    }
   });
 }
 
@@ -54,11 +55,11 @@ function addFilter(e) {
   $('.parcho-container')[0].innerHTML = '';
   dragodindes.map((dragodinde) => {
     if (e.target.value == '' || dragodinde[0][0].toLowerCase().indexOf(e.target.value) != -1) {
-        const divLine = create_div('addDD-line row', addThisDD);
-        const pName = create_p('mydd-name', dragodinde[0]);
-        divLine.appendChild(pName);
-        $('.parcho-container')[0].appendChild(divLine);
-      }
+      const divLine = create_div('addDD-line row', addThisDD);
+      const pName = create_p('mydd-name', dragodinde[0]);
+      divLine.appendChild(pName);
+      $('.parcho-container')[0].appendChild(divLine);
+    }
   });
 }
 
@@ -84,7 +85,8 @@ function addDD() {
   const bottomChoice = create_div('bottom-choice');
   bottomChoice.appendChild(returnDDBtn);
   render_home_button(bottomChoice);
-  $('.principal-container')[0].style.maxHeight = `${$(window).height() - $('.bottom-choice').height() }px`;
+  $('.principal-container')[0].style.maxHeight = `${$(window).height() - $('.bottom-choice').height()}px`;
+  appearEffect2($('.principal-container'))
 }
 
 function rmvDD() {
@@ -110,17 +112,18 @@ function rmvDD() {
   bottomChoice.appendChild(returnDDBtn);
   render_home_button(bottomChoice);
   $('.principal-container')[0].style.maxHeight = `${$(window).height() - $('.bottom-choice').height()}px`;
+  appearEffect2($('.principal-container'))
 }
 
 function addThisDD() {
   json['Mes dragodindes'].push(this.children[0].innerHTML);
-  fs.writeFileSync(`${__dirname }/assets/dofus-electron.json`, JSON.stringify(json));
+  fs.writeFileSync(`${__dirname}/assets/dofus-electron.json`, JSON.stringify(json));
   myDragodindes();
 }
 
 function rmvThisDD() {
   const index = json['Mes dragodindes'].indexOf(this.children[0].innerHTML);
   json['Mes dragodindes'].splice(index, 1);
-  fs.writeFileSync(`${__dirname }/assets/dofus-electron.json`, JSON.stringify(json));
+  fs.writeFileSync(`${__dirname}/assets/dofus-electron.json`, JSON.stringify(json));
   myDragodindes();
 }

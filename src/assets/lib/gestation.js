@@ -23,19 +23,20 @@ function show_gestation() {
   $('.principal-container')[0].appendChild(ressourceDiv);
   const bottomChoice = create_div('bottom-choice');
   render_home_button(bottomChoice);
-  $('.principal-container')[0].style.maxHeight = `${$(window).height() - $('.bottom-choice').height() }px`;
+  $('.principal-container')[0].style.maxHeight = `${$(window).height() - $('.bottom-choice').height()}px`;
+  appearEffect2($('.principal-container'))
 }
 
 function search_gestation(e) {
   $('.gestation-container')[0].innerHTML = '';
   dragodindes.map((dragodinde) => {
     if (dragodinde[0][0].toLocaleLowerCase().indexOf(e.target.value) != -1 || e.target.value == '') {
-        const divLine = create_div('text-left gestation-line row');
-        const pName = create_p('ressource-name', dragodinde[0]);
-        divLine.appendChild(pName);
-        const pLine = create_p('ressource-count', dragodinde[1]);
-        divLine.appendChild(pLine);
-        $('.gestation-container')[0].appendChild(divLine);
-      }
+      const divLine = create_div('text-left gestation-line row');
+      const pName = create_p('ressource-name', dragodinde[0]);
+      divLine.appendChild(pName);
+      const pLine = create_p('ressource-count', dragodinde[1]);
+      divLine.appendChild(pLine);
+      $('.gestation-container')[0].appendChild(divLine);
+    }
   });
 }

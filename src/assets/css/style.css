@@ -85,6 +85,11 @@ input:focus {
     border-radius : 20px;
 }
 
+.btn-infos-animate, .btn-craft-animate, .btn-parchemin-animate, .btn-gestation-animate, .mydd-animate, .lastdd-animate, .btn-fecondation-calculator-animate {
+    transform: translateX(150%);
+    transition: all 0.2s ease-in-out;
+}
+
 .btn-home-return {
     color : rgb(64, 143, 163);
 }
@@ -115,8 +120,13 @@ input:focus {
 
 .home-menu {
     position: absolute;
-    width : 80%;
+    width : 100%;
+    overflow: hidden;
+}
+
+.home-menu button {
     margin-left: 10%;
+    width : 80%;
 }
 
 .infos-input {

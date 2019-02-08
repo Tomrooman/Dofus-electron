@@ -5,31 +5,35 @@ const MomentRange = require('moment-range');
 const momentR = MomentRange.extendMoment(moment);
 
 $('.btn-infos')[0].onclick = function (event) {
-    show_informations('show');
+    disappearToRight($('.home-menu'), show_infos)
 };
 
+function show_infos() {
+    show_informations('show');
+}
+
 $('.btn-craft')[0].onclick = function (event) {
-    show_craft();
+    disappearToRight($('.home-menu'), show_craft)
 };
 
 $('.btn-parchemin')[0].onclick = function (event) {
-    show_parchemin();
+    disappearToRight($('.home-menu'), show_parchemin)
 };
 
 $('.btn-gestation')[0].onclick = function (event) {
-    show_gestation();
+    disappearToRight($('.home-menu'), show_gestation)
 };
 
 $('.btn-mydd')[0].onclick = function (event) {
-    myDragodindes();
+    disappearToRight($('.home-menu'), myDragodindes)
 };
 
 $('.btn-lastdd')[0].onclick = function (event) {
-    lastDragodindes();
+    disappearToRight($('.home-menu'), lastDragodindes)
 };
 
 $('.btn-fecondation-calculator')[0].onclick = function (event) {
-    calculFecondation();
+    disappearToRight($('.home-menu'), calculFecondation)
 };
 
 $(document).ready(() => {
@@ -52,13 +56,13 @@ function render_top_infos() {
 }
 
 function show_home() {
-    const infosBtn = create_button('btn btn-infos', 'Informations', () => { show_informations('show'); });
-    const craftBtn = create_button('btn btn-craft', 'Crafts', () => { show_craft(); });
-    const parcheminBtn = create_button('btn btn-parchemin', 'Parchemins', () => { show_parchemin(); });
-    const gestationBtn = create_button('btn btn-gestation', 'Gestation des dragodindes', () => { show_gestation(); });
-    const myddBtn = create_button('btn mydd', 'Mes dragodindes', () => { myDragodindes(); });
-    const lastBtn = create_button('btn lastdd', 'Modifier la dernière dragodinde fécondée', () => { lastDragodindes(); });
-    const calculBtn = create_button('btn btn-fecondation-calculator', 'Calculer les fécondations', () => { calculFecondation(); });
+    const infosBtn = create_button('btn btn-infos', 'Informations', () => { disappearToRight($('.home-menu'), show_infos); });
+    const craftBtn = create_button('btn btn-craft', 'Crafts', () => { disappearToRight($('.home-menu'), show_craft); });
+    const parcheminBtn = create_button('btn btn-parchemin', 'Parchemins', () => { disappearToRight($('.home-menu'), show_parchemin); });
+    const gestationBtn = create_button('btn btn-gestation', 'Gestation des dragodindes', () => { disappearToRight($('.home-menu'), show_gestation); });
+    const myddBtn = create_button('btn mydd', 'Mes dragodindes', () => { disappearToRight($('.home-menu'), myDragodindes); });
+    const lastBtn = create_button('btn lastdd', 'Modifier la dernière dragodinde fécondée', () => { disappearToRight($('.home-menu'), lastDragodindes); });
+    const calculBtn = create_button('btn btn-fecondation-calculator', 'Calculer les fécondations', () => { disappearToRight($('.home-menu'), calculFecondation); });
     $('.principal-container')[0].innerHTML = '';
     $('.principal-container')[0].className = 'principal-container home-menu';
     $('.principal-container')[0].appendChild(infosBtn);
@@ -75,6 +79,34 @@ function render_home_button(bottomChoice) {
     const homeBtn = create_button('btn btn-home-return', "Retourner à l'accueil", show_home);
     bottomChoice.appendChild(homeBtn);
     $('.principal-container')[0].appendChild(bottomChoice);
+}
+
+function disappearToRight(selectedDiv, callback) {
+    selectedDiv.children().map((index, div) => {
+        setTimeout(() => {
+            div.className = div.className + "-animate"
+            $(`.${div.className.split(' ')[1]}`).animate({
+                opacity: 0,
+            }, 200);
+        }, (index + 1) * 100);
+        setTimeout(() => {
+            callback()
+        }, selectedDiv.children().length * 160)
+        $('.top-infos').animate({
+            opacity: 0
+        }, 500)
+    });
+}
+
+function appearEffect2(selectedDiv) {
+    selectedDiv.children().map((index, div) => {
+        div.style.opacity = '0';
+        setTimeout(() => {
+            $(div).animate({
+                opacity: 1,
+            }, 300);
+        }, (index + 1) * 100);
+    });
 }
 
 function appearEffect(selectedDiv) {

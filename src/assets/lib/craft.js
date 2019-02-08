@@ -14,13 +14,13 @@ function make_content(categoryDiv, array, selectItem = false, selectedCategory =
   array.map((craft, index) => {
     let oneCategory;
     if (selectedCategory && selectedCategory == 'Baffeur' || selectedCategory == 'Caresseur' ||
-    selectedCategory == 'Foudroyeur' || selectedCategory == 'Mangeoire' || selectedCategory == 'Abreuvoir') {
+      selectedCategory == 'Foudroyeur' || selectedCategory == 'Mangeoire' || selectedCategory == 'Abreuvoir') {
       oneCategory = create_div(`text-left category ${craft[0]} row`);
       const category = create_h('h5', 'craft-category-name', craft[0]);
       oneCategory.appendChild(category);
       const categoryEfficacite = create_h('h5', 'craft-category-efficacite text-right', craft[1][craft[1].length - 3]);
       oneCategory.appendChild(categoryEfficacite);
-    } else {
+    } else {
       oneCategory = create_div(`text-center category ${craft[0]}`);
       const category = create_h('h5', false, craft[0]);
       oneCategory.appendChild(category);
@@ -49,6 +49,7 @@ function make_content(categoryDiv, array, selectItem = false, selectedCategory =
   }
   render_home_button(bottomChoice);
   $('.principal-container')[0].style.maxHeight = `${$(window).height() - $('.bottom-choice').height()}px`;
+  appearEffect2($('.principal-container'))
 }
 
 function handleInputCraft(e, selectedItem, selectedCategory) {
@@ -138,6 +139,7 @@ function select_item(selectedItem, selectedCategory) {
   bottomChoice.appendChild(returnCategory);
   render_home_button(bottomChoice);
   $('.principal-container')[0].style.maxHeight = `${$(window).height() - $('.bottom-choice').height()}px`;
+  appearEffect2($('.principal-container'))
 }
 
 function select_category(choice) {
