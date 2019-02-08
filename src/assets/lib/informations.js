@@ -85,7 +85,7 @@ function add_infos() {
   const divName = create_div('col-10 row center-div');
   const divValue = create_div('col-10 row center-div');
   const title = create_h('h4', 'text-center', 'Rajouter une information');
-  const confirmBtn = create_button('btn', 'Ajouter btn-add', confirm_add_infos);
+  const confirmBtn = create_button('btn btn-add', 'Ajouter', confirm_add_infos);
   const inputName = create_input('col-8', false);
   const inputValue = create_input('col-8', false);
   const infosDiv = create_div('add-infos-form col-12');
