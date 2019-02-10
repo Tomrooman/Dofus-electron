@@ -68,21 +68,17 @@ input:focus {
     padding-top : 1rem;
     padding-bottom : 1rem;
     width : 100%;
+    box-shadow: 
+        inset 0px 11px 8px -10px rgba(92, 92, 92, 0.733),
+        inset 0px -11px 8px -10px rgba(92, 92, 92, 0.733);
     font-size : 1.2rem;
-    border-radius : 20px;
-    background-color : rgba(49, 49, 49, 0.733);
-    box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
     color : rgb(206, 194, 193);
-    border-bottom : 1px solid rgba(92, 92, 92, 0.733);
-    border-left : 1px solid rgba(92, 92, 92, 0.733);
-    border-right : 1px solid rgba(92, 92, 92, 0.733);
+    border-bottom : 8px solid rgba(92, 92, 92, 0.733);
     /*background-image: linear-gradient(to right, rgb(24, 24, 24) 0%, rgba(71, 71, 71, 0.733) 50%, rgb(24, 24, 24) 100%);*/
 }
 
 .btn-infos {
-    box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
-    border-top : 1px solid rgba(92, 92, 92, 0.733);
-    border-radius : 20px;
+    border-top : 8px solid rgba(92, 92, 92, 0.733);
 }
 
 .btn-infos-animate, .btn-craft-animate, .btn-parchemin-animate, .btn-gestation-animate, .mydd-animate, .lastdd-animate, .btn-fecondation-calculator-animate {
@@ -143,9 +139,7 @@ input:focus {
     position: absolute;
     bottom : 0;
     width: 100%;
-    border-top : 1px solid rgba(92, 92, 92, 0.733);
-    box-shadow: 0px 0px 5px rgba(92, 92, 92, 0.733);
-    border-radius : 20px;
+    border-top : 8px solid rgba(92, 92, 92, 0.733);
 }
 
 .bottom-choice button {
