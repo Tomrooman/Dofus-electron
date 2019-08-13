@@ -93,10 +93,6 @@ input:focus {
     background-color : rgb(41, 54, 58) !important;
 }
 
-.btn-add-infos {
-    border-radius : 0px;
-}
-
 .btn:hover {
     transition: all 0.2s ease-in-out;
     letter-spacing: 0.3rem;
@@ -137,8 +133,13 @@ input:focus {
     border-radius : 20px;
 }
 
-.bottom-choice button {
+.bottom-choice button:nth-child(2), .bottom-choice button:nth-child(3){
     border-radius : 0px !important;
+}
+
+.bottom-choice button:first-child {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .btn:focus {
