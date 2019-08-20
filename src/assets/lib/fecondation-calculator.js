@@ -63,6 +63,7 @@ function calculate_with_last(ressourceDiv) {
   let date_accouchement = moment();
   let last_time = 0;
   let addHours = 0;
+  let minutes = 0;
   const sortedMyDD = sort_my_dd();
   const parchoContainer = create_div('parcho-container');
   sortedMyDD.map((drago, index) => {
@@ -78,15 +79,17 @@ function calculate_with_last(ressourceDiv) {
         const ddTime = moment(json.last[1], 'DD/MM/YYYY HH:mm').add(json.last[2] - drago.time, 'hours');
         const duration = momentR.range(ddTime, moment());
         const hours = Array.from(duration.by('hour', { excludeEnd: true }));
-        const days = Array.from(duration.by('day'));
-        const oneAccouchDate = moment().add(hours.length, 'hours');
+        const days = Array.from(duration.by('day', { excludeEnd: true }));
+        minutes = Array.from(duration.by('minute', { excludeEnd: true })).length;
+        minutes = minutes - (hours.length * 60)
+        const oneAccouchDate = moment().add(hours.length, 'hours').add(minutes, 'minute');
         if (hours.length > 0) {
-          if (days.length >= 1 && hours.length != 11) {
+          if (days.length >= 1) {
             pLine = create_p('fecond-count fecond-now', 'Maintenant');
             addHours = 0;
             date_accouchement = moment().add(drago.time, 'hours');
           } else {
-            pLine = create_p('fecond-count', `Dans ${hours.length}H - ${oneAccouchDate.format('DD/MM/YYYY HH:mm')}`);
+            pLine = create_p('fecond-count', `Dans ${hours.length}H | ${oneAccouchDate.format('DD/MM/YYYY HH:mm')}`);
             addHours = hours.length;
             date_accouchement = moment(json.last[1], 'DD/MM/YYYY HH:mm').add(json.last[2], 'hours');
           }
@@ -99,9 +102,9 @@ function calculate_with_last(ressourceDiv) {
     } else {
       if (drago.time < last_time) {
         addHours = (last_time - drago.time) + addHours;
-        pLine = create_p('fecond-count', `Dans ${addHours}H | ${moment().add(addHours, 'hours').format('DD/MM/YYYY HH:mm')}`);
+        pLine = create_p('fecond-count', `Dans ${addHours}H | ${moment().add(addHours, 'hours').add(minutes, 'minute').format('DD/MM/YYYY HH:mm')}`);
       } else if (addHours) {
-        pLine = create_p('fecond-count', `Dans ${addHours}H - ${moment().add(addHours, 'hours').format('DD/MM/YYYY HH:mm')}`);
+        pLine = create_p('fecond-count', `Dans ${addHours}H | ${moment().add(addHours, 'hours').add(minutes, 'minute').format('DD/MM/YYYY HH:mm')}`);
       } else {
         pLine = create_p('fecond-count fecond-now', 'Maintenant');
       }
@@ -123,7 +126,6 @@ function calculate_with_last(ressourceDiv) {
 function sort_my_dd() {
   const myDD = [];
   json['Mes dragodindes'].map((drago) => {
-    const divLine = create_div('ressource-line row');
     let selectedDragoName;
     let selectedDragoTime;
     dragodindes.map((dragodinde) => {
