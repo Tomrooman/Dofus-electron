@@ -21,7 +21,6 @@ function calculFecondation() {
     ressourceDiv.appendChild(create_p('no-dd-title', 'Aucune dragodinde'));
     $('.principal-container')[0].appendChild(ressourceDiv);
   }
-  // $('.principal-container')[0].appendChild(div);
   const bottomChoice = create_div('bottom-choice');
   render_home_button(bottomChoice);
   $('.principal-container')[0].style.maxHeight = `${$(window).height() - $('.bottom-choice').height()}px`;
@@ -82,7 +81,7 @@ function calculate_with_last(ressourceDiv) {
         const days = Array.from(duration.by('day'));
         const oneAccouchDate = moment().add(hours.length, 'hours');
         if (hours.length > 0) {
-          if (days.length >= 1) {
+          if (days.length >= 1 && hours.length != 11) {
             pLine = create_p('fecond-count fecond-now', 'Maintenant');
             addHours = 0;
             date_accouchement = moment().add(drago.time, 'hours');
