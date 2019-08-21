@@ -89,8 +89,14 @@ function calculate_with_last(ressourceDiv) {
             addHours = 0;
             date_accouchement = moment().add(drago.time, 'hours');
           } else {
-            pLine = create_p('fecond-count', `Dans ${hours.length}H | ${oneAccouchDate.format('DD/MM/YYYY HH:mm')}`);
-            addHours = hours.length;
+            if (moment().isAfter(ddTime)) {
+              pLine = create_p('fecond-count fecond-now', `Maintenant`);
+              addHours = 0;
+            }
+            else {
+              pLine = create_p('fecond-count', `Dans ${hours.length}H | ${oneAccouchDate.format('DD/MM/YYYY HH:mm')}`);
+              addHours = hours.length;
+            }
             date_accouchement = moment(json.last[1], 'DD/MM/YYYY HH:mm').add(json.last[2], 'hours');
           }
         } else {
