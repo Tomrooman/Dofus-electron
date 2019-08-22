@@ -3,3 +3,4 @@ out
 dofus-electron-win32-x64
 yarn.lock
 package-lock.json
+.DS_Store
